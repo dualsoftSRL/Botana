@@ -24,7 +24,7 @@
             <i class="fa-solid fa-motorcycle"></i>Entrega rápida
           </h1>
           <p class="p2Body">
-            Un servicio que siempre llega a tiempo, incluso más rápido.
+            Un servicio que siempre llega a tiempo y con calidad.
           </p>
         </div>
       </article>
