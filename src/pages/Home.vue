@@ -18,8 +18,7 @@ const handleResize = addEventListener("resize", () => {});
           por <span class="yellow">dentro.</span>
         </h1>
         <p class="pTtext">
-          Donde se fabrican las mejores empanadas<br />artesanales, las
-          favoritas de todos!
+          Donde se fabrican las mejores empanadas<br />artesanales, #LasFavoritas de todos!
         </p>
       </div>
       <div class="imagenes">
