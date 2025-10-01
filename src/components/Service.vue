@@ -1,5 +1,5 @@
 <template>
-  <section class="sectionBody" id="body">
+  <section class="sectionBody" id="service">
     <div class="containerTexts">
       <h1 class="h1Body">Rápido, Confiable y Delicioso</h1>
       <p class="pBody">Tu tiempo vale, tu sabor<br />también.</p>

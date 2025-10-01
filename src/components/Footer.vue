@@ -30,8 +30,11 @@
     <div class="footer3">
       <h1 class="h1Footer2">Mapa del sitio</h1>
       <ul class="ulFooter">
-        <li class="liFooter"><a class="navLink" href="#home">Inicio</a></li>
-        <li class="liFooter"><a class="navLink" href="#body">Nosotros</a></li>
+        <li class="liFooter"><a class="navLink" href="/">Inicio</a></li>
+        <li class="liFooter"><a class="navLink" href="#menu">Menú</a></li>
+        <li class="liFooter"><a class="navLink" href="#service">Servicio</a></li>
+         <li class="liFooter"><a class="navLink" href="#location">Encuentranos</a></li>
+        <li class="liFooter"><a class="navLink" href="/aboutus">Nosotros</a></li>
         <li class="liFooter"><a class="navLink" href="#footer">Contacto</a></li>
       </ul>
     </div>
@@ -104,6 +107,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   width: 100%;
+  font-weight: 700;
   text-align: center;
 }
 

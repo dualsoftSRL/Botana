@@ -1,30 +1,9 @@
 <template>
   <section class="availableSec">
     <header class="headerSec">
-      <h1 class="h1TitleSec">¿Donde nos encontramos?</h1>
+      <h1 class="h1TitleSec">Tus empanadas a domicilio <i class="fa-solid fa-box"></i></h1>
     </header>
     <div class="avArticleContainer">
-      <article class="articleSec">
-        <div class="divCartImg">
-          <img class="imgCart" src="../assets/img/Cart.webp" />
-        </div>
-        <div class="divCartGeneral">
-          <h1 class="h1Sec">
-            Ven a visitarnos
-            <i class="fa-solid fa-map-location-dot"></i>
-          </h1>
-          <div class="ubicationDiv">
-            <p class="p1">
-              Calle Duarte - Frente al Club Amigos de la Duarte, Moca.
-            </p>
-            <p class="p2">
-              ¡No te quedes con el antojo! Aquí te esperamos con las
-              <span class="yellow2">mejores empanadas</span> de la zona.
-            </p>
-          </div>
-        </div>
-      </article>
-
       <article class="articleSec2">
         <div class="divGeneral2">
           <h1 class="h1Sec">
@@ -59,7 +38,7 @@
   display: flex;
   flex-direction: column;
   padding-block: 30px;
-  gap: 40px;
+  gap: 10px;
 }
 
 .headerSec {
@@ -71,6 +50,9 @@
 .h1TitleSec {
   font-family: "Baloo 2", system-ui;
   font-size: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .articleSec {
@@ -126,6 +108,11 @@
   text-align: center;
 }
 
+.fa-box {
+  color: rgb(255, 196, 0);
+  font-size: 26px;
+}
+
 .p2 {
   width: 350px;
   font-family: "Poppins", system-ui;
@@ -133,7 +120,7 @@
 }
 
 .yellow2 {
-  color: #ff8400;
+  color: #fcb100;
   font-weight: 700;
 }
 

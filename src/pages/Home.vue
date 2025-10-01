@@ -1,8 +1,10 @@
 <script setup>
 import Nav from "../components/Nav.vue";
-import Body from "../components/Body.vue";
 import AvailableSec from "../components/AvailableSec.vue";
 import Footer from "../components/Footer.vue";
+import Location from "../components/Location.vue";
+import Service from "../components/Service.vue";
+import Stuffed from "../components/Stuffed.vue"
 
 const handleResize = addEventListener("resize", () => {});
 </script>
@@ -18,7 +20,7 @@ const handleResize = addEventListener("resize", () => {});
           por <span class="yellow">dentro.</span>
         </h1>
         <p class="pTtext">
-          Donde se fabrican las mejores empanadas<br />artesanales, #LasFavoritas de todos!
+          Donde se fabrican las mejores empanadas<br />artesanales, <span class="yellowBold">#LasFavoritas de todos!</span>
         </p>
       </div>
       <div class="imagenes">
@@ -26,7 +28,9 @@ const handleResize = addEventListener("resize", () => {});
         <img class="img1" src="../assets/img/Empanadas1.webp" />
       </div>
     </div>
-    <Body />
+    <Stuffed />
+    <Service />
+    <Location />
     <AvailableSec />
   </main>
   <Footer />
@@ -95,7 +99,7 @@ const handleResize = addEventListener("resize", () => {});
 }
 
 .yellow {
-  color: #ffb304;
+  color: #fcb100;
 }
 
 .pTtext {
@@ -122,6 +126,11 @@ const handleResize = addEventListener("resize", () => {});
   justify-content: center;
   align-items: center;
   transition: transform 0.2s ease-in-out;
+}
+
+.yellowBold {
+  font-weight: 700;
+  color: #fcb100;
 }
 
 .wsFloat:hover {

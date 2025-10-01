@@ -1,32 +1,57 @@
+<script setup lang="js">
+import Aside from "./Aside.vue"
+import { ref } from "vue";
+const isMenuOpen = ref(false);
+</script>
+
 <template>
   <div class="containerNav">
+     <Aside :isOpen="isMenuOpen" @closeMenu="isMenuOpen = false" />
+
     <div class="divNav">
       <nav class="nav">
         <div class="imgDiv">
           <img class="imgLogo" src="../assets/img/LogoBotana.webp" />
         </div>
+       
         <div class="divBotones">
           <ul class="ulNav">
             <li class="lis">
-              <a class="navLink" href="#home">
-                <i class="fa-solid fa-home"></i>
-                <h2 class="navLinkTitle">Inicio</h2>
+              <a class="navLink" href="/">
+                <h1 class="navLinkTitle">Inicio</h1>
               </a>
             </li>
             <li class="lis">
-              <a class="navLink" href="#body">
-                <i class="fa-solid fa-users"></i>
-                <h2 class="navLinkTitle">Nosotros</h2></a
+              <a class="navLink" href="#menu">
+                <h1 class="navLinkTitle">Menú</h1>
+              </a>
+            </li>
+            <li class="lis">
+              <a class="navLink" href="#service">
+                <h1 class="navLinkTitle">Servicio</h1>
+              </a>
+            </li>
+            <li class="lis">
+              <a class="navLink" href="#location">
+                <h1 class="navLinkTitle">Encuentranos</h1>
+              </a>
+            </li>
+            <li class="lis">
+              <a class="navLink" href="/aboutus">
+                <h1 class="navLinkTitle">Nosotros</h1></a
               >
             </li>
             <li class="lis">
               <a class="navLink" href="#footer">
-                <i class="fa-solid fa-phone"></i>
-                <h2 class="navLinkTitle">Contacto</h2></a
-              >
+                <h1 class="navLinkTitle">Contacto</h1>
+              </a>
             </li>
           </ul>
         </div>
+        <i 
+          class="fa-solid fa-bars menuIcon"
+          @click="isMenuOpen = true">
+        </i>
       </nav>
     </div>
   </div>
@@ -40,6 +65,12 @@
 
 .navLinkTitle {
   font-size: 20px;
+  transition: 0.2s ease;
+}
+
+.navLinkTitle:hover {
+  scale: 1.1;
+  color: rgb(227, 227, 227);
 }
 
 .navLink {
@@ -53,7 +84,7 @@
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 900;
 }
 
 .nav {
@@ -95,6 +126,10 @@
   margin: 0;
 }
 
+.menuIcon {
+  display: none;
+}
+
 .lis a {
   color: #fff;
   text-decoration: none;
@@ -115,12 +150,20 @@
     padding-inline: 20px;
   }
 
+  .menuIcon  {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    color: white;
+  }
+
   .divBotones {
     width: 100%;
   }
 
   .ulNav {
-    gap: 40px;
+    gap: 10px;
   }
 
   .navLinkTitle {
@@ -129,6 +172,20 @@
 
   .lis {
     font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav {
+    gap: 30px;
+  }
+
+  .ulNav {
+    gap: 25px;
+  }
+
+  .navLinkTitle {
+    font-size: 18px;
   }
 }
 </style>
