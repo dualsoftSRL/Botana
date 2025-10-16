@@ -146,6 +146,8 @@
     width: 300px;
   }
 
+  
+
   .pFooter1 {
     width: 300px;
     text-align: center;
@@ -154,19 +156,24 @@
 
   .footer3 {
     align-items: center;
+    width: 100vw;
     gap: 20px;
   }
 
   .ulFooter {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 20px;
+    justify-content: center;
+    padding-inline: 10px;
   }
 
   .liFooter {
     font-size: 18px;
     font-weight: 500;
   }
+
 }
 
 @media ((min-width: 767px) and (max-width: 1024px)) {

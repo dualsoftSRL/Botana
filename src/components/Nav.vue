@@ -147,7 +147,12 @@ const isMenuOpen = ref(false);
 
 @media (max-width: 767px) {
   .nav {
+    width: 100vw;
     padding-inline: 20px;
+  }
+
+  .divNav {
+    width: 100vw;
   }
 
   .menuIcon  {

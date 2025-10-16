@@ -36,7 +36,7 @@ const handleResize = addEventListener("resize", () => {});
   <Footer />
   <a
     class="wsFloat"
-    href="https://wa.me/8095780571"
+    href="https://wa.me/+18095780571"
     target="_blank"
     aria-label="WhatsApp"
   >
@@ -144,6 +144,11 @@ const handleResize = addEventListener("resize", () => {});
 }
 
 @media (max-width: 767px) {
+
+  .mainContainer {
+    max-width: 100vw;
+  }
+
   .containerHome {
     height: auto;
     padding-inline: 30px;

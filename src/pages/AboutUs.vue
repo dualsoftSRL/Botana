@@ -5,19 +5,29 @@ import Footer from "../components/Footer.vue"
 
 const nuestrosValores = [
   {
-    title: "Casero",
+    title: "Calidad",
     icon: "fa-solid fa-bowl-food",
-    description: "Cada empanada está hecha como en casa, con el mismo cariño y dedicación de una receta familiar."
+    description: "Cuidamos cada detalle, desde los ingredientes hasta el empaque final."
   },
   {
-    title: "Fresco",
+    title: "Pasión",
     icon: "fa-solid fa-leaf",
-    description: "Usamos ingredientes seleccionados y de calidad, preparados al momento para garantizar sabor y frescura en cada bocado"
+    description: "Amamos lo que hacemos, y eso se siente en cada empanada."
   },
   {
-    title: "Auténtico",
-    icon: "fa-solid fa-award",
-    description: "Conservamos la esencia de la empanada tradicional, pero con nuestro propio toque especial que nos hace únicos."
+    title: "Innovación",
+    icon: "fa-solid fa-lightbulb",
+    description: "Mejoramos constantemente nuestros procesos y productos."
+  },
+  {
+    title: "Compromiso",
+    icon: "fa-solid fa-handshake",
+    description: "Cumplimos con nuestros clientes, distribuidores y consumidores."
+  },
+  {
+    title: "Autenticidad",
+    icon: "fa-solid fa-gem",
+    description: "Somos los creadores de la receta original que marcó la diferencia."
   }
 ];
 </script>
@@ -30,32 +40,56 @@ const nuestrosValores = [
         Sobre nosotros <i class="groupIcon fa-solid fa-people-group"></i>
       </h1>
       <p class="headerDescription">
-        En Botana creemos que las mejores empanadas son las que se hacen con
-        amor, ingredientes frescos y un toque casero que nos distingue.
+        <span class="spanBold">Botana</span> nació con una idea sencilla: crear
+        empanadas artesanales con el sabor de casa, pero con la calidad y
+        consistencia que merecen los mejores productos dominicanos.<br /><br />
+        La fundadora y creadora de la receta, Yuri Henriquez, durante años de
+        pruebas, esfuerzos y mucho amor perfeccionó una receta única: una masa
+        dorada y seca que, aunque se fría, parezca horneada. Este detalle nos
+        distingue y convierte cada empanada en una experiencia ligera, deliciosa
+        y diferente.<br /><br />
+        Cada <span class="spanBold">Botana</span> se elabora con materia prima
+        fresca, procesos controlados y mucho amor. Detrás de cada empanada hay
+        años de pruebas, sacrificios y pasión por ofrecer lo mejor.<br /><br />
+        Hoy, nuestras empanadas están presentes en cafeterías, colegios,
+        clínicas y puntos de venta, llevando el auténtico sabor de
+        <span class="spanBold">Botana</span> a miles de dominicanos cada día.<br /><br />
+        Somos más que una fábrica de empanadas: somos una familia que cree en la
+        <span class="spanBold">calidad</span>, en la
+        <span class="spanBold">tradición</span> y en la
+        <span class="spanBold">innovación.</span> <br /><br />
+        Por eso decimos con orgullo:
       </p>
+      <span class="eslogan">Botana las Originales!</span>
     </header>
 
     <section class="missionContainer">
-      <div class="missionDiv">
-        <header class="missionHeader">
-          <h2 class="missionTitle">
-            Nuestra mision <i class="fa-solid fa-bullseye"></i>
-          </h2>
-        </header>
-        <p class="missionDescription">
-          En Botana creemos que una empanada no es solo un antojo, sino un
-          momento para compartir. Nacimos con la idea de llevar a la mesa ese
-          sabor casero que siempre une a la familia y a los amigos.
-          <br />
-          <br />
-          Usamos ingredientes frescos y recetas tradicionales para preparar
-          empanadas crujientes y rellenas de sabor, hechas con dedicación y
-          cariño en cada bocado.
-          <br />
-          <br />
-          Nuestro propósito es simple: que cada persona que nos visite se sienta
-          como en casa y disfrute de una experiencia deliciosa y auténtica.
-        </p>
+      <div class="divMissionVision">
+        <div class="missionDiv">
+          <header class="missionHeader">
+            <h2 class="missionTitle">
+              Nuestra mision <i class="fa-solid fa-bullseye"></i>
+            </h2>
+          </header>
+          <p class="missionDescription">
+            Ofrecer empanadas artesanales con un sabor auténtico y una calidad
+            superior, elaboradas bajo procesos que combinan tradición,
+            innovación y amor por los detalles, para brindar a cada cliente una
+            experiencia deliciosa en cualquier momento del día.
+          </p>
+        </div>
+        <div class="visionDiv">
+          <header class="visionHeader">
+            <h3 class="visionTitle">
+              Nuestra Visión <i class="fa-solid fa-rocket"></i>
+            </h3>
+          </header>
+          <p class="visionDescription">
+            Ser la marca dominicana líder en productos artesanales listos para
+            comer, reconocida por su sabor inconfundible, su innovación
+            constante y su compromiso con la excelencia.
+          </p>
+        </div>
       </div>
       <img class="missionImg" src="../assets/img/BotanaReunionImg.webp" />
     </section>
@@ -74,6 +108,24 @@ const nuestrosValores = [
           <p class="valoresDescription">{{ valores.description }}</p>
         </article>
       </div>
+    </section>
+    <section class="sectionFounder">
+      <header>
+        <h1 class="founderSectionTitle">Mensaje del fundador</h1>
+      </header>
+      <p class="founderDescription">
+        Botana nació de un sueño familiar y de muchas noches de trabajo, de
+        pruebas, errores y aprendizajes. Cada empanada representa un pedacito de
+        ese esfuerzo, de esa pasión por hacer algo bien hecho, con amor y
+        orgullo dominicano.
+        <br />
+        <br />
+        Hoy, ver a tantas personas disfrutar nuestras empanadas es la mayor
+        recompensa. Gracias a todos los #BotanaLovers que nos han acompañado en
+        este camino… ¡seguiremos trabajando para que cada bocado siga siendo una
+        experiencia original!
+      </p>
+      <p class="foundersP">— Yuri y Francisco Jorge</p>
     </section>
   </main>
   <Footer />
@@ -110,8 +162,18 @@ const nuestrosValores = [
 }
 
 .headerDescription {
-  width: 60%;
+  width: 70%;
   text-align: center;
+}
+
+.spanBold {
+  font-weight: bold;
+}
+
+.divMissionVision {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .missionContainer {
@@ -131,11 +193,9 @@ const nuestrosValores = [
 }
 
 .missionDiv {
-  width: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .missionImg {
@@ -148,6 +208,31 @@ const nuestrosValores = [
   justify-content: center;
 }
 
+.visionDiv .visionHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.visionDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.visionTitle {
+  font-family: "Baloo 2", system-ui;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eslogan {
+  color: #fcb100;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .valoresSection {
   display: flex;
   flex-direction: column;
@@ -157,7 +242,7 @@ const nuestrosValores = [
 
 .valoresDiv {
   display: flex;
-  gap: 50px;
+  gap: 40px;
 }
 
 .valoresTitle {
@@ -169,9 +254,10 @@ const nuestrosValores = [
 }
 
 .valoresArticle {
-  width: 270px;
+  width: 80%;
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 10px;
 }
@@ -196,8 +282,36 @@ const nuestrosValores = [
   color: rgb(255, 49, 49);
 }
 
+.fa-rocket {
+  color: rgb(255, 49, 49);
+}
+
 .groupIcon {
   font-size: 30px;
+}
+
+.sectionFounder {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+
+.founderSectionTitle {
+  text-align: center;
+}
+
+.founderDescription {
+  width: 70%;
+  text-align: center;
+}
+
+.foundersP {
+  text-align: end;
+  width: 100%;
+  font-weight: 700;
 }
 
 @media (max-width: 767px) {
@@ -219,6 +333,10 @@ const nuestrosValores = [
     padding-inline: 30px;
   }
 
+  .visionDescription {
+    text-align: center;
+  }
+
   .missionDescription {
     text-align: center;
   }
@@ -229,6 +347,12 @@ const nuestrosValores = [
 
   .valoresDiv {
     flex-direction: column;
+    align-items: center;
+  }
+
+   .founderDescription {
+    width: 90%;
+    text-align: center;
   }
 }
 
@@ -237,13 +361,14 @@ const nuestrosValores = [
     padding-inline: 20px;
   }
 
+ 
+
   .headerDescription {
     width: 90%;
   }
 
   .missionContainer {
     display: flex;
-
     gap: 15px;
   }
 
