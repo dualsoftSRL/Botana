@@ -1,53 +1,38 @@
 <script setup>
+import { ref, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
-const locations = [
-  {
-    id: 1,
-    lugar: "Principal",
-    direccion: "Calle Duarte, Frente al Club Amigos de la Duarte, Moca",
-    image: "/imgs/Cart.webp",
-    maps: "https://maps.app.goo.gl/HkyjM3zmUDKqwB1F9",
-  },
-  {
-    id: 2,
-    lugar: "La Baristeria",
-    direccion: "Calle Salcedo #117, Moca",
-    image: "/imgs/Cart.webp",
-    maps: "https://maps.app.goo.gl/S6ccTcDmCzWT7NhGA",
-  },
-  {
-    id: 3,
-    lugar: "El Cafe de Luz",
-    direccion: "Plaza Soho, C/Rosario esquina Doct. Alfonseca , Moca",
-    image: "/imgs/Cart.webp",
-    maps: "https://maps.app.goo.gl/guYbNSQniPou2XB78",
-  },
-  {
-    id: 4,
-    lugar: "Recreativo Sport Bar & Tapas",
-    direccion: "Calle Duarte #51 Moca",
-    image: "/imgs/Cart.webp",
-    maps: "https://maps.app.goo.gl/dTJym95xvPCX9RmUA",
-  },
-  {
-    id: 5,
-    lugar: "Cafeteria Miky",
-    direccion: "Moca, Espaillat 56000",
-    image: "/imgs/Cart.webp",
-    maps: "https://maps.app.goo.gl/2S4GZcZZyb54vCV58",
-  },
-  {
-    id: 6,
-    lugar: "Parque Cayetano Germosen",
-    direccion: "Calle Hermanas Mirabal, Cayetano Germosén, Provincia Espaillat",
-    image: "/imgs/Cart.webp",
-    maps: "https://maps.app.goo.gl/uGwkJioV47TCcFU16",
-  },
-];
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "../../firebase.js";
+
+const locations = ref([]);
+
+const cargarUbicaciones = async () => {
+  try {
+    const q = query(
+      collection(db, "ubicaciones"),
+      orderBy("timestamp", "asc")
+    );
+    const querySnapshot = await getDocs(q);
+
+    locations.value = querySnapshot.docs.map((docSnap) => ({
+      id: docSnap.id,
+      lugar: docSnap.data().titulo,
+      direccion: docSnap.data().ubicacion,
+      descripcion: docSnap.data().descripcion,
+      image: "/imgs/Cart.webp",
+    }));
+  } catch (e) {
+    console.error("Error al cargar ubicaciones:", e);
+  }
+};
+
+onMounted(() => {
+  cargarUbicaciones();
+});
 </script>
 
 <template>
@@ -62,9 +47,9 @@ const locations = [
       navigation
       :centered-slides="false"
       :breakpoints="{
-        0: { slidesPerView: 1 },       // 📱 móviles
-        768: { slidesPerView: 2 },     // 📲 tablets
-        1024: { slidesPerView: 3 }     // 💻 desktop
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
       }"
     >
       <SwiperSlide v-for="loc in locations" :key="loc.id">
@@ -73,7 +58,7 @@ const locations = [
             <i class="fa-solid fa-location-dot fa-2xl iconLocation"></i>
             <div class="cardInfoDiv">
               <h1 class="place">{{ loc.lugar }}</h1>
-              <p class="location">{{ loc.direccion }}</p>
+              <p class="location">{{ loc.descripcion }}</p>
             </div>
             <img
               v-if="loc.image"
@@ -82,7 +67,7 @@ const locations = [
               class="imageLocal"
             />
           </div>
-          <a :href="loc.maps" target="_blank" class="btonMaps">
+          <a :href="loc.direccion" target="_blank" class="btonMaps">
             Ver en Google Maps
           </a>
         </div>
@@ -192,6 +177,7 @@ const locations = [
   border-radius: 5px;
   font-family: "Poppins", system-ui;
   transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .btonMaps:hover {
